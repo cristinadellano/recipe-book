@@ -1,8 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { IRecipe } from '../recipes/recipe.model';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class RecipeService {
+
+    recipeSelected = new EventEmitter<IRecipe>()
     getAllRecipes() {
         return Recipe;
     }
