@@ -6,4 +6,9 @@ import { Component } from '@angular/core';
 })
 
 export class NavComponent {
+    collapsed: boolean = true;
+
+    collapsible() {
+        this.collapsed = !this.collapsed;
+    }
 }
