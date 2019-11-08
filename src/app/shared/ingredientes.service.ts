@@ -8,6 +8,10 @@ export class IngredientService {
         return Ingredients;
     }
 
+    saveNewIngredient(ingredient) {
+        Ingredients.push(ingredient);
+    }
+
 }
 
 const Ingredients: IIngredients[] = [

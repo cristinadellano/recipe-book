@@ -1,14 +1,14 @@
 <div class="row">
   <div class="col-xs-12">
-    <form>
+    <form #newIngredientForm="ngForm" (ngSubmit)="saveIngredient(newIngredientForm.value)"> 
       <div class="row">
         <div class="col-xs-5 form-group">
           <label for="name">Name</label>
-          <input id="name" type="text" class="form-control">
+          <input id="name" name="name" type="text" class="form-control" (ngModel)="name">
         </div>
         <div class="col-xs-2 form-group">
           <label for="amount">Amount</label>
-          <input id="amount" type="number" class="form-control">
+          <input id="amount" name="amount" type="number" class="form-control" (ngModel)="amount">
         </div>
       </div>
       <div class="row">
