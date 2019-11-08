@@ -1,6 +1,5 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { IRecipe } from '../recipes/recipe.model';
-import { Observable } from 'rxjs';
 
 @Injectable()
 export class RecipeService {
@@ -19,6 +18,20 @@ const Recipe: IRecipe[] = [
         description: 'No need for fancy sauces',
         dateCreated: new Date('12/18/2011'),
         imageUrl: '/assets/images/spaguettis.jpg',
+        ingredients: [
+            {
+                name: 'apples',
+                amount: 4,
+            },
+            {
+                name: 'apples',
+                amount: 4,
+            },
+            {
+                name: 'apples',
+                amount: 4,
+            }
+        ]
     },
     {
         id: 2,
@@ -26,6 +39,20 @@ const Recipe: IRecipe[] = [
         description: 'Because you cannot go round to your mum every Sunday.',
         dateCreated: new Date('9/26/2020'),
         imageUrl: '/assets/images/chicken.jpg',
+        ingredients: [
+            {
+                name: 'apples',
+                amount: 4,
+            },
+            {
+                name: 'apples',
+                amount: 4,
+            },
+            {
+                name: 'apples',
+                amount: 4,
+            }
+        ]
     },
     {
         id: 3,
@@ -33,6 +60,20 @@ const Recipe: IRecipe[] = [
         description: 'The ultimate comfort food.',
         dateCreated: new Date('3/26/2021'),
         imageUrl: '/assets/images/pie.jpg',
+        ingredients: [
+            {
+                name: 'apples',
+                amount: 4,
+            },
+            {
+                name: 'apples',
+                amount: 4,
+            },
+            {
+                name: 'apples',
+                amount: 4,
+            }
+        ]
     },
     {
         id: 4,
@@ -40,6 +81,20 @@ const Recipe: IRecipe[] = [
         description: 'Stir-fries are healthy, quick and very versatile',
         dateCreated: new Date('5/15/2010'),
         imageUrl: '/assets/images/shrimp.jpg',
+        ingredients: [
+            {
+                name: 'apples',
+                amount: 4,
+            },
+            {
+                name: 'apples',
+                amount: 4,
+            },
+            {
+                name: 'apples',
+                amount: 4,
+            }
+        ]
     },
     {
         id: 5,
@@ -47,5 +102,19 @@ const Recipe: IRecipe[] = [
         description: 'Do not be intimidated by fish',
         dateCreated: new Date('8/10/2015'),
         imageUrl: '/assets/images/seabass.jpg',
+        ingredients: [
+            {
+                name: 'apples',
+                amount: 4,
+            },
+            {
+                name: 'apples',
+                amount: 4,
+            },
+            {
+                name: 'apples',
+                amount: 4,
+            }
+        ]
     },
 ]
