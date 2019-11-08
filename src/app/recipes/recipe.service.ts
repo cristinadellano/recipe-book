@@ -1,12 +1,23 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable, EventEmitter, Output } from '@angular/core';
 import { IRecipe } from '../recipes/recipe.model';
+import { IIngredients } from '../shared/ingredients.model';
+import { IngredientService } from '../shared/ingredientes.service';
 
 @Injectable()
 export class RecipeService {
 
     recipeSelected = new EventEmitter<IRecipe>()
+
+    constructor(private ingService: IngredientService) {
+
+    }
+
     getAllRecipes() {
         return Recipe;
+    }
+
+    addIngredientsToShoppingList(ingredients: IIngredients[]) {
+        this.ingService.addIngredients(ingredients);
     }
 
 }
