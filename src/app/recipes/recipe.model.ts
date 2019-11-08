@@ -1,3 +1,4 @@
+import { IIngredients } from '../shared/ingredients.model';
 
 export interface IRecipe {
     id: number,
@@ -5,5 +6,6 @@ export interface IRecipe {
     description: string,
     dateCreated: Date,
     imageUrl: string,
+    ingredients: IIngredients[],
 }
 
