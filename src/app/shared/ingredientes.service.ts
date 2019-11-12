@@ -1,11 +1,13 @@
 import { Injectable, EventEmitter, Output } from '@angular/core';
+
+import { Subject } from 'rxjs';
+
 import { IIngredients } from './ingredients.model';
 
 @Injectable()
 export class IngredientService {
 
-    @Output()
-    ingredientsChanged = new EventEmitter<IIngredients[]>();
+    ingredientsChanged = new Subject<IIngredients[]>();
     
     getAllIngredients() {
         return Ingredients;

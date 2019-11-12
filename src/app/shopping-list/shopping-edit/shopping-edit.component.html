@@ -1,19 +1,25 @@
 <div class="row">
   <div class="col-xs-12">
-    <form #newIngredientForm="ngForm" (ngSubmit)="saveIngredient(newIngredientForm.value)"> 
+    <form #newIngredientForm="ngForm" (ngSubmit)="saveIngredient(newIngredientForm.value)">
       <div class="row">
-        <div class="col-xs-5 form-group">
-          <label for="name">Name</label>
-          <input id="name" name="name" type="text" class="form-control" (ngModel)="name">
+        <div class="col-xs-5 form-group"
+          [ngClass]="{'error': newIngredientForm.controls.name?.invalid && newIngredientForm.controls.name?.touched}">
+          <label for="name">Ingredient Name:</label>
+          <em *ngIf="newIngredientForm.controls.name?.invalid && (newIngredientForm.controls.name?.touched)">A name for the Ingredients is required</em>
+          <input (ngModel)="name" name="name" required id="name" type="text" class="form-control"
+            placeholder="Name of your ingredient..." />
         </div>
-        <div class="col-xs-2 form-group">
-          <label for="amount">Amount</label>
-          <input id="amount" name="amount" type="number" class="form-control" (ngModel)="amount">
+        <div class="col-xs-4 form-group"
+        [ngClass]="{'error': newIngredientForm.controls.amount?.invalid && newIngredientForm.controls.amount?.touched}">
+        <label for="name">Amount:</label>
+        <em *ngIf="newIngredientForm.controls.amount?.invalid && (newIngredientForm.controls.amount?.touched)">Amount is required</em>
+        <input (ngModel)="amount" name="amount" required id="amount" type="number" class="form-control"
+          placeholder="Amount of your ingredient..." />
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12 btn-group">
-          <button type="submit" class="btn btn-success">Add</button>
+          <button type="submit" class="btn btn-success" [disabled]="!newIngredientForm.valid">Add</button>
           <button type="button" class="btn btn-danger">Delete</button>
           <button type="button" class="btn btn-primary">Clear</button>
         </div>
