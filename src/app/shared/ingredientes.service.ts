@@ -8,9 +8,14 @@ import { IIngredients } from './ingredients.model';
 export class IngredientService {
 
     ingredientsChanged = new Subject<IIngredients[]>();
-    
+    startedEditing = new Subject<number>();
+
     getAllIngredients() {
         return Ingredients;
+    }
+
+    getIngredient(id: number) {
+        return Ingredients[id];
     }
 
     saveNewIngredient(ingredient: IIngredients) {
@@ -18,9 +23,17 @@ export class IngredientService {
     }
 
     addIngredients(ingredients: IIngredients[]) {
-        for(let ingredient of ingredients) {
+        for (let ingredient of ingredients) {
             this.saveNewIngredient(ingredient);
         }
+    }
+
+    updateIngredient(index:number, newIngredient: IIngredients) {
+        Ingredients[index] = newIngredient;
+    }
+
+    deleteIngredient(index: number) {
+        Ingredients.splice(index, 1);
     }
 
 }
